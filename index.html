@@ -1,93 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Document</title>
-        <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-            crossorigin="anonymous"
-        />
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-        <script
-            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"
-        ></script>
-    </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="jumbotron">
-                        <h1 class="display-3">NYT SEARCH</h1>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="jumbotron">
+                    <h1 class="display-3">NYT SEARCH</h1>
+                    <p class="lead">Jumbo helper text</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="jumbotron" id="searchDiv">
+                    <h1 class="display-3">Search Form Jumbotron</h1>
+                    <form id="searchForm">
+                        <div class="form-group">
+                            <label for="searchTermInput">Search Term</label>
+                            <input type="text" class="form-control" id="searchTermInput" />
+                        </div>
+                        <div class="form-group">
+                            <label for="numRecordsToGet">Number of Records to Retrieve</label>
+                            <select class="form-control" id="numRecordsToGet">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="startyearinput">Start Year</label>
+                            <input type="text" class="form-control" id="startyearinput" />
+                        </div>
+                        <div class="form-group">
+                            <label for="endyearinput">End Year (Optional)</label>
+                            <input type="text" class="form-control" id="endyearinput" />
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="submitSearchBtn">
+                            Submit
+                        </button>
+                        <button class="btn btn-primary" id="clearresultsbtn">
+                            Clear Results
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="jumbotron">
+                    <div id="searchResults">
+                        <h1 class="display-3">Jumbo heading</h1>
                         <p class="lead">Jumbo helper text</p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="jumbotron" id="searchDiv">
-                        <h1 class="display-3">Search Form Jumbotron</h1>
-                        <form id="searchForm">
-                            <div class="form-group">
-                                <label for="searchTermInput">Search Term</label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="searchTermInput"
-                                />
-                            </div>
-                            <div class="form-group">
-                                <label for="numRecordsToGet"
-                                    >Number of Records to Retrieve</label
-                                >
-                                <select
-                                    class="form-control"
-                                    id="numRecordsToGet"
-                                >
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                            <button
-                                type="submit"
-                                class="btn btn-primary"
-                                id="submitSearchBtn"
-                            >
-                                Submit
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="jumbotron">
-                        <div id="searchResults">
-                            <h1 class="display-3">Jumbo heading</h1>
-                            <p class="lead">Jumbo helper text</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-        <script src = "backend.js"></script>
-    </body>
+    </div>
+    <script src="backend.js"></script>
+</body>
+
 </html>
